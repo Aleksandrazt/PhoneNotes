@@ -1,6 +1,7 @@
 from collections import namedtuple
 
 PHONEBOOK = 'phonebook.txt'
+LINE_IN_PAGE = 3
 Note = namedtuple('Note', 's_name name p_name org j_phone h_phone')
 
 
@@ -11,7 +12,7 @@ def show_pages():
     """
     with open('phonebook.txt', mode="r", encoding="utf-8") as f:
         while True:
-            for _ in range(3):
+            for _ in range(LINE_IN_PAGE):
                 line = f.readline().strip()
                 if line:
                     data = Note(*line.split(','))
